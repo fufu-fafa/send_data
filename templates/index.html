@@ -14,16 +14,21 @@
         }
         .display {
             margin-top: 20px;
-            white-space: pre;
+            white-space: pre-wrap;
+            max-width: 90vw;
             border: 1px solid #0f0;
             padding: 10px;
             display: inline-block;
             background-color: #111;
         }
+        p {
+            margin: 0;
+            line-height: 1rem;
+        }
     </style>
     <script>
         async function fetchData() {
-            let response = await fetch('http://127.0.0.1:5000/data');
+            let response = await fetch('http://127.0.0.1:50000/data');
             let data = await response.json();
                 document.getElementById('message').innerText = data.message;
         }
