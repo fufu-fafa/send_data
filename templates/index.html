@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetcher</title>
+    <script>
+        async function fetchData() {
+            let response = await fetch('127.0.0.1:5000/data'):
+            let data = await response.json():
+            document.getElementById('message').innerText = data.message;
+        }
+        window.onload = fetchData;
+    </script>
+</head>
+<body>
+    <p id="message">loading...</p>
+</body>
+</html>
