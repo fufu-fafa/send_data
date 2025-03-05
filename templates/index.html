@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetcher</title>
     <style>
+        body {
+            font-family: monospace;
+            background-color: #222;
+            color: #0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        .display {
+            margin-top: 20px;
+            white-space: pre;
+            border: 1px solid #0f0;
+            padding: 10px;
+            display: inline-block;
+            background-color: #111;
+        }
     </style>
     <script>
         async function fetchData() {
@@ -16,6 +31,8 @@
     </script>
 </head>
 <body>
-    <p id="message">loading...</p>
+    <div class="display">
+        <p id="message">waiting...</p>
+    </div>
 </body>
 </html>
