@@ -1,5 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 app = Flask(__name__)
+
+def read_file():
+    try:
+        with open("output.txt", 'r', encoding='utf-8') as out:
+            return out.read()
+    except FileNotFoundError:
+        print("no output file found")
+        return "no message"
 
 @app.route('/')
 def index():
@@ -7,7 +15,7 @@ def index():
 
 @app.route('/data')
 def data():
-    return {"message": "01001000 01100101 01101100 01101100 01101111 00101100 00100000 01010111 01101111 01110010 01101100 01100100 00100001 long long long longlon long long long long"}
+    return jsonify({"message": read_file()})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=50000, debug=True)
